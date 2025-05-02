@@ -46,9 +46,6 @@
 //! 
 //! See [LICENSE-APACHE](LICENSE-APACHE) and [LICENSE-MIT](LICENSE-MIT).
 
-
-#![cfg(windows)]
-
 use std::{
     ffi,
     ffi::OsString,
@@ -268,7 +265,7 @@ impl VersionInfoInternal {
             unsafe {
                 GetFileVersionInfoW(
                     PCWSTR(file_name.as_ptr()),
-                    0,
+                    None,
                     size,
                     data.as_mut_ptr().cast())
             }?;
