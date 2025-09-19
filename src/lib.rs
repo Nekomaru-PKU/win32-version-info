@@ -271,7 +271,7 @@ impl VersionInfoInternal {
             }?;
             Ok(Self(data))
         } else {
-            Err(Error::from_win32())
+            Err(Error::from_thread())
         }
     }
 
